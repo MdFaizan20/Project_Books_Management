@@ -67,6 +67,15 @@ const createUser = async function (req, res) {
         if (!valid.isValid(address)) {
             return res.status(400).send({ status: false, msg: "pls provide address" })
         }
+        if (!validate.isValid(address.street)) {
+            return res.status(400).send({ status: false, msg: "pls provide street" })
+        }
+        if (!validate.isValid(address.city)) {
+            return res.status(400).send({ status: false, msg: "pls provide city" })
+        }
+        if (!validate.isValid(address.pinCode)) {
+            return res.status(400).send({ status: false, msg: "pls provide pin code" })
+        }
 
 
         const createUserData = await userModel.create(req.body)
