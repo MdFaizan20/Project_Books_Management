@@ -14,9 +14,9 @@ router.post("/login", userController.loginUser)
 
 //------------------booksRoutes----------------
 
-router.post("/createbook",middleware,booksController.createBook)
-router.get("/booksDetails",middleware,booksController.getBook)
-router.get("/book/:bookId",middleware,booksController.bookDetails)
+router.post("/createbook",booksController.createBook)
+router.get("/booksDetails",booksController.getBook)
+router.get("/book/:bookId",booksController.bookDetails)
 router.put("/bookUpdate/:bookId",middleware,booksController.updateBook)
 router.delete("/removeData/:bookId",middleware,booksController.removeBook)
 
